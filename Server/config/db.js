@@ -3,7 +3,7 @@ const colors = require("colors");
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(process.env.mondoDB_Api);
     console.log(
       `Connected To Mongodb Database ${mongoose.connection.host}`.bgGreen.white
     );

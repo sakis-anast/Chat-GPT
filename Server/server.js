@@ -26,16 +26,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 8080;
+const port = process.env.port || 3636;
 
 //API routes
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/openai", require("./routes/openaiRoutes"));
 
 //listen server
-app.listen(PORT, () => {
+app.listen(port, () => {
   console.log(
-    `Server Running in ${process.env.DEV_MODE} mode on port no ${PORT}`.bgCyan
+    `Server Running in ${process.env.Dev_Mode} mode on port no ${PORT}`.bgCyan
       .white
   );
 });
