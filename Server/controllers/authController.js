@@ -1,6 +1,6 @@
 const errorHandler = require("../middelwares/errorMiddleware");
 const userModel = require("../models/userModel");
-const errorResponse = require("../utils/errroResponse");
+const errorResponse = require("../utils/errorResponse");
 
 // JWT TOKEN
 exports.sendToken = (user, statusCode, res) => {
@@ -12,13 +12,13 @@ exports.sendToken = (user, statusCode, res) => {
 };
 
 //REGISTER
-exports.registerContoller = async (req, res, next) => {
+exports.registerController = async (req, res, next) => {
   try {
     const { username, email, password } = req.body;
-    //exisitng user
-    const exisitingEmail = await userModel.findOne({ email });
-    if (exisitingEmail) {
-      return next(new errorResponse("Email is already register", 500));
+    //existing user
+    const existingEmail = await userModel.findOne({ email });
+    if (existingEmail) {
+      return next(new errorResponse("Email is already registered", 500));
     }
     const user = await userModel.create({ username, email, password });
     this.sendToken(user, 201, res);
@@ -38,11 +38,11 @@ exports.loginController = async (req, res, next) => {
     }
     const user = await userModel.findOne({ email });
     if (!user) {
-      return next(new errorResponse("Invalid Creditial", 401));
+      return next(new errorResponse("Invalid credentials", 401));
     }
     const isMatch = await user.matchPassword(password);
     if (!isMatch) {
-      return next(new errorResponse("Invalid Creditial", 401));
+      return next(new errorResponse("Invalid credentials", 401));
     }
     //res
     this.sendToken(user, 200, res);
@@ -57,6 +57,6 @@ exports.logoutController = async (req, res) => {
   res.clearCookie("refreshToken");
   return res.status(200).json({
     success: true,
-    message: "Logout Succesfully",
+    message: "Logout Successfully",
   });
 };
