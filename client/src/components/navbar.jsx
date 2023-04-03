@@ -11,7 +11,7 @@ function Navbar ()  {
 
   const handleLogout = async () => {
     try {
-      await axios.post("/api/v1/auth/logout");
+      await axios.post("http://localhost:3636/api/v1/auth/logout");
       localStorage.removeItem("authToken");
       toast.success("logout successfully ");
       navigate("/login");
@@ -28,7 +28,7 @@ function Navbar ()  {
       sx={{ boxShadow: 3, mb: 2 }}
     >
       <Typography variant="h1" color="primary" fontWeight="bold">
-        AI App
+        Open AI App
       </Typography>
       {loggedIn ? (
         <>
