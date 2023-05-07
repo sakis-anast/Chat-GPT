@@ -53,10 +53,7 @@ exports.chatbotController = async (req, res) => {
     const { text } = req.body;
     const { data } = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: `Answer question similar to how yoda from star war would.
-      Me: 'what is your name?'
-      yoda: 'yoda is my name'
-      Me: ${text}`,
+      prompt: ` ${text}`,
       max_tokens: 300,
       temperature: 0.7,
     });
@@ -93,11 +90,11 @@ exports.jsconverterController = async (req, res) => {
     });
   }
 };
-exports.scifiImageController = async (req, res) => {
+exports.imageController = async (req, res) => {
   try {
     const { text } = req.body;
     const { data } = await openai.createImage({
-      prompt: `generate a scifi image of ${text}`,
+      prompt: ` ${text}`,
       n: 1,
       size: "512x512",
     });

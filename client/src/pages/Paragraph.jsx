@@ -50,7 +50,6 @@ const Paragraph = () => {
       m={"2rem auto"}
       borderRadius={5}
       sx={{ boxShadow: 5 }}
-      backgroundColor={theme.palette.background.alt}
     >
       <Collapse in={error}>
         <Alert severity="error" sx={{ mb: 2 }}>
@@ -78,7 +77,9 @@ const Paragraph = () => {
           fullWidth
           variant="contained"
           size="large"
-          sx={{ color: "white", mt: 2 }}
+          sx={{ color: "white", mt: 2 ,backgroundColor:"black" ,"&:hover": {
+            backgroundColor:"darkgrey" , color:"black",
+          }}}
         >
           Generate
         </Button>

@@ -52,7 +52,6 @@ const JsConverter = () => {
       m={"2rem auto"}
       borderRadius={5}
       sx={{ boxShadow: 5 }}
-      backgroundColor={theme.palette.background.alt}
     >
       <Collapse in={error}>
         <Alert severity="error" sx={{ mb: 2 }}>
@@ -80,7 +79,9 @@ const JsConverter = () => {
           fullWidth
           variant="contained"
           size="large"
-          sx={{ color: "white", mt: 2 }}
+          sx={{ color: "white", mt: 2 ,backgroundColor:"black" ,"&:hover": {
+            backgroundColor:"darkgrey" , color:"black",
+          }}}
         >
           Convert
         </Button>
@@ -114,7 +115,7 @@ const JsConverter = () => {
             boxShadow: 0,
             height: "500px",
             borderRadius: 5,
-            borderColor: "natural.medium",
+            borderColor: "black",
             bgcolor: "background.default",
           }}
         >

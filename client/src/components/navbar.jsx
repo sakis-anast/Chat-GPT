@@ -1,11 +1,10 @@
 import React from "react";
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 function Navbar ()  {
-  const theme = useTheme();
   const navigate = useNavigate();
   const loggedIn = JSON.parse(localStorage.getItem("authToken"));
 
@@ -22,29 +21,29 @@ function Navbar ()  {
   return (
     <Box
       width={"100%"}
-      backgroundColor={theme.palette.background.alt}
+      backgroundColor={"black"}
       p="1rem 6%"
       textAlign={"center"}
       sx={{ boxShadow: 3, mb: 2 }}
     >
-      <Typography variant="h1" color="primary" fontWeight="bold">
+      <Typography variant="h1" color="white" fontWeight="bold">
         Open AI App
       </Typography>
       {loggedIn ? (
         <>
-          <NavLink to="/" p={1}>
+          <NavLink className={"navlink"} to="/" p={1}>
             Home
           </NavLink>
-          <NavLink to="/login" onClick={handleLogout} p={1}>
+          <NavLink className={"navlink"} to="/login" onClick={handleLogout} p={1}>
             Logout
           </NavLink>
         </>
       ) : (
         <>
-          <NavLink to="/register" p={1}>
+          <NavLink className={"navlink"} to="/register" p={1}>
             Sign Up
           </NavLink>
-          <NavLink to="/login" p={1}>
+          <NavLink className={"navlink"} to="/login" p={1}>
             Sign In
           </NavLink>
         </>

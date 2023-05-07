@@ -35,7 +35,7 @@ app.use("/api/v1/openai", require("./routes/openaiRoutes"));
 //listen server
 app.listen(port, () => {
   console.log(
-    `Server Running in ${process.env.Dev_Mode} mode on port no ${PORT}`.bgCyan
+    `Server Running in ${process.env.Dev_Mode} mode on port no ${port}`.bgCyan
       .white
   );
 });

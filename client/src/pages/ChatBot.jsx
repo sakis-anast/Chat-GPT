@@ -78,7 +78,9 @@ const ChatBot = () => {
           fullWidth
           variant="contained"
           size="large"
-          sx={{ color: "white", mt: 2 }}
+          sx={{ color: "white", mt: 2 ,backgroundColor:"black" ,"&:hover": {
+            backgroundColor:"darkgrey" , color:"black",
+          }}}
         >
           Chat
         </Button>

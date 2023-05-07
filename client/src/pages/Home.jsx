@@ -9,7 +9,7 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <>
-      <Box sx={{ display: "flex", flexDirection: "row" }}>
+      <Box sx={{ display: "flex", flexDirection: "row" ,  flexWrap: 'wrap' ,justifyContent: 'space-evenly' }}>
         <Box p={2}>
           <Typography variant="h4" mb={2} fontWeight="bold">
             Text Generation
@@ -24,17 +24,17 @@ const Home = () => {
               "&:hover": {
                 border: 2,
                 boxShadow: 0,
-                borderColor: "primary.dark",
+                borderColor: "black",
                 cursor: "pointer",
               },
             }}
           >
             <DescriptionRounded
-              sx={{ fontSize: 80, color: "primary.main", mt: 2, ml: 2 }}
+              sx={{ fontSize: 80,  mt: 2, ml: 2 }}
             />
             <Stack p={3} pt={0}>
               <Typography fontWeight="bold" variant="h5">
-                TEXT SUMAMRY
+                TEXT SUMMARY
               </Typography>
               <Typography variant="h6">
                 Summarize long text into short sentences
@@ -44,7 +44,7 @@ const Home = () => {
         </Box>
         <Box p={2}>
           <Typography variant="h4" mb={2} fontWeight="bold">
-            Parapgraph Generation
+            Paragraph Generation
           </Typography>
           <Card
             onClick={() => navigate("/paragraph")}
@@ -56,17 +56,17 @@ const Home = () => {
               "&:hover": {
                 border: 2,
                 boxShadow: 0,
-                borderColor: "primary.dark",
+                borderColor: "black",
                 cursor: "pointer",
               },
             }}
           >
             <FormatAlignLeftOutlined
-              sx={{ fontSize: 80, color: "primary.main", mt: 2, ml: 2 }}
+              sx={{ fontSize: 80,  mt: 2, ml: 2 }}
             />
             <Stack p={3} pt={0}>
               <Typography fontWeight="bold" variant="h5">
-                Parapgraph
+                Paragraph
               </Typography>
               <Typography variant="h6">
                 Generate Paragraph with words
@@ -88,13 +88,13 @@ const Home = () => {
               "&:hover": {
                 border: 2,
                 boxShadow: 0,
-                borderColor: "primary.dark",
+                borderColor: "black",
                 cursor: "pointer",
               },
             }}
           >
             <ChatRounded
-              sx={{ fontSize: 80, color: "primary.main", mt: 2, ml: 2 }}
+              sx={{ fontSize: 80,  mt: 2, ml: 2 }}
             />
             <Stack p={3} pt={0}>
               <Typography fontWeight="bold" variant="h5">
@@ -118,20 +118,20 @@ const Home = () => {
               "&:hover": {
                 border: 2,
                 boxShadow: 0,
-                borderColor: "primary.dark",
+                borderColor: "black",
                 cursor: "pointer",
               },
             }}
           >
             <ChatRounded
-              sx={{ fontSize: 80, color: "primary.main", mt: 2, ml: 2 }}
+              sx={{ fontSize: 80,  mt: 2, ml: 2 }}
             />
             <Stack p={3} pt={0}>
               <Typography fontWeight="bold" variant="h5">
                 JS CONVERTER
               </Typography>
               <Typography variant="h6">
-                Trasnlate english to javascript code
+                Translate english to javascript code
               </Typography>
             </Stack>
           </Card>
@@ -150,19 +150,19 @@ const Home = () => {
               "&:hover": {
                 border: 2,
                 boxShadow: 0,
-                borderColor: "primary.dark",
+                borderColor: "black",
                 cursor: "pointer",
               },
             }}
           >
             <ChatRounded
-              sx={{ fontSize: 80, color: "primary.main", mt: 2, ml: 2 }}
+              sx={{ fontSize: 80,  mt: 2, ml: 2 }}
             />
             <Stack p={3} pt={0}>
               <Typography fontWeight="bold" variant="h5">
-                Scifi Image
+                 Image
               </Typography>
-              <Typography variant="h6">Generate Scifi images</Typography>
+              <Typography variant="h6">Generate  images</Typography>
             </Stack>
           </Card>
         </Box>

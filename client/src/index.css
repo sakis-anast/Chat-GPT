@@ -8,17 +8,31 @@ body {
   font-family: "roboto", sans-serif;
 }
 
+.navlink{
+
+
+  color: white ;
+  text-decoration: none;
+  padding: 20px;
+  margin-top: 20px;
+
+}
+  .navlink:hover {
+  color: darkgrey ;
+}
+
+.navlink.active {
+  color: darkgrey ;
+}
 a {
-  color: #60bf70 !important;
+  color: black ;
   text-decoration: none;
   padding: 20px;
   margin-top: 20px;
 }
 
 a:hover {
-  color: black !important;
+  color: darkgrey ;
 }
 
-a.active {
-  color: #57d96d !important;
-}
+
