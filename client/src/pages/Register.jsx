@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
 import {
   Box,
   Typography,
-  useTheme,
   useMediaQuery,
   TextField,
   Button,
@@ -14,8 +13,14 @@ import {
 } from "@mui/material";
 
 const Register = () => {
-  const theme = useTheme();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.hasOwnProperty("authToken", true)) {
+      navigate("/");
+    
+    }
+  }, []);
   //media
   const isNotMobile = useMediaQuery("(min-width: 1000px)");
   // states
@@ -50,7 +55,6 @@ const Register = () => {
       m={"2rem auto"}
       borderRadius={5}
       sx={{ boxShadow: 5 }}
-      backgroundColor={theme.palette.background.alt}
     >
       <Collapse in={error}>
         <Alert severity="error" sx={{ mb: 2 }}>

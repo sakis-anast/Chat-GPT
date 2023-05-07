@@ -32,7 +32,7 @@ exports.paragraphController = async (req, res) => {
     const { text } = req.body;
     const { data } = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: `write a detail paragraph about \n${text}`,
+      prompt: `write a 250 word  text about \n${text}`,
       max_tokens: 500,
       temperature: 0.5,
     });

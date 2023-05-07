@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
 import {
   Box,
   Typography,
-  useTheme,
   useMediaQuery,
   TextField,
   Button,
@@ -15,12 +14,17 @@ import {
 } from "@mui/material";
 
 const Image = () => {
-  const theme = useTheme();
   const navigate = useNavigate();
+  useEffect(() => {
+    if (!localStorage.hasOwnProperty("authToken", true)) {
+      navigate("/login");
+    
+    }
+  }, []);
   //media
   const isNotMobile = useMediaQuery("(min-width: 1000px)");
   // states
-  const [text, settext] = useState("");
+  const [text, setText] = useState("");
   const [image, setImage] = useState("");
   const [error, setError] = useState("");
 
@@ -28,7 +32,7 @@ const Image = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:3636/api/v1/openai/scifi-image", { text });
+      const { data } = await axios.post("http://localhost:3636/api/v1/openai/image", { text });
       console.log(data);
       setImage(data);
     } catch (err) {
@@ -50,7 +54,6 @@ const Image = () => {
       m={"2rem auto"}
       borderRadius={5}
       sx={{ boxShadow: 5 }}
-      backgroundColor={theme.palette.background.alt}
     >
       <Collapse in={error}>
         <Alert severity="error" sx={{ mb: 2 }}>
@@ -58,7 +61,7 @@ const Image = () => {
         </Alert>
       </Collapse>
       <form onSubmit={handleSubmit}>
-        <Typography variant="h3">Scifi Image</Typography>
+        <Typography variant="h3">Image</Typography>
 
         <TextField
           placeholder="add your text"
@@ -69,7 +72,7 @@ const Image = () => {
           fullWidth
           value={text}
           onChange={(e) => {
-            settext(e.target.value);
+            setText(e.target.value);
           }}
         />
 

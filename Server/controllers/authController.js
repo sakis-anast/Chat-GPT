@@ -44,6 +44,7 @@ exports.loginController = async (req, res, next) => {
     if (!isMatch) {
       return next(new errorResponse("Invalid credentials", 401));
     }
+    
     //res
     this.sendToken(user, 200, res);
   } catch (error) {

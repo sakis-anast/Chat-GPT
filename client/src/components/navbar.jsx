@@ -26,7 +26,7 @@ function Navbar ()  {
       textAlign={"center"}
       sx={{ boxShadow: 3, mb: 2 }}
     >
-      <Typography variant="h1" color="white" fontWeight="bold">
+      <Typography variant="h2" color="white" fontWeight="bold">
         Open AI App
       </Typography>
       {loggedIn ? (

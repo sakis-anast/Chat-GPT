@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
 import {
   Box,
   Typography,
-  useTheme,
   useMediaQuery,
   TextField,
   Button,
@@ -15,12 +14,17 @@ import {
 } from "@mui/material";
 
 const JsConverter = () => {
-  const theme = useTheme();
   const navigate = useNavigate();
+  useEffect(() => {
+    if (!localStorage.hasOwnProperty("authToken", true)) {
+      navigate("/login");
+    
+    }
+  }, []);
   //media
   const isNotMobile = useMediaQuery("(min-width: 1000px)");
   // states
-  const [text, settext] = useState("");
+  const [text, setText] = useState("");
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
 
@@ -70,7 +74,7 @@ const JsConverter = () => {
           fullWidth
           value={text}
           onChange={(e) => {
-            settext(e.target.value);
+            setText(e.target.value);
           }}
         />
 

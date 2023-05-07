@@ -1,5 +1,5 @@
 
-import React from "react";
+import React ,{useEffect}from "react";
 import { Box, Typography, Card, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import DescriptionRounded from "@mui/icons-material/DescriptionRounded";
@@ -7,6 +7,12 @@ import FormatAlignLeftOutlined from "@mui/icons-material/FormatAlignLeftOutlined
 import ChatRounded from "@mui/icons-material/ChatRounded";
 const Home = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    if (!localStorage.hasOwnProperty("authToken", true)) {
+      navigate("/login");
+    
+    }
+  }, []);
   return (
     <>
       <Box sx={{ display: "flex", flexDirection: "row" ,  flexWrap: 'wrap' ,justifyContent: 'space-evenly' }}>

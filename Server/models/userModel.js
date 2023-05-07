@@ -6,7 +6,7 @@ const cookie = require("cookie");
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
-    required: [true, "USername is Required"],
+    required: [true, "Username is Required"],
   },
   email: {
     type: String,
@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, "Password is required"],
-    minlength: [6, "Password length should be 6 character long"],
+
   },
   customerId: {
     type: String,
