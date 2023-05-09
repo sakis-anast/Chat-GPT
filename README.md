@@ -14,7 +14,6 @@ A full stack application that users can use open AI for asking questions, genera
 :heavy_check_mark: javascript code</br>
 
 
-
 ## Technologies: 
 |Backend | Frontend |
 | --- | --- |
