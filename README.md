@@ -1,5 +1,3 @@
-# Online chat application:shopping:
-
 ### Title: "OpenAI App" 
 
 
@@ -9,7 +7,7 @@ A full stack application that users can use open AI for asking questions, genera
 
 ### Features:
 :heavy_check_mark: sign up and login system </br>
-:heavy_check_mark: ask questions/br>
+:heavy_check_mark: ask questions </br>
 :heavy_check_mark: summarize text</br>
 :heavy_check_mark: create text</br>
 :heavy_check_mark: generate image</br>
